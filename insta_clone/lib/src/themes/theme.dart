@@ -13,7 +13,7 @@ ThemeData appTheme = ThemeData(
         )),
     textTheme: const TextTheme(
       bodyText2: TextStyle(
-        color: Colors.red,
+        color: Colors.black,
       ),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(

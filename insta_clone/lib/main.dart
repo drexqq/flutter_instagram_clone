@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:insta_clone/src/views/home.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:insta_clone/page_router.dart';
 import 'package:insta_clone/src/themes/theme.dart' as theme;
-import 'package:insta_clone/src/views/shop.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -12,13 +12,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: '/',
-      routes: {
-        "/": (context) => const Home(),
-        "/shop": (context) => const Shop(),
-      },
-      theme: theme.appTheme,
-    );
+    return MaterialApp(theme: theme.appTheme, home: const PageRouter());
   }
 }
