@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Shop extends StatelessWidget {
+  const Shop({super.key});
 
   AppBar _appBar() {
     return AppBar(
@@ -17,25 +17,17 @@ class Home extends StatelessWidget {
     );
   }
 
-  BottomNavigationBar _bottomNavBar(context) {
+  BottomNavigationBar _bottomNavBar() {
     return BottomNavigationBar(
       showSelectedLabels: false,
       showUnselectedLabels: false,
-      items: [
+      items: const [
         BottomNavigationBarItem(
-          icon: IconButton(
-              icon: const Icon(Icons.home_outlined),
-              onPressed: () {
-                Navigator.pushNamed(context, "/");
-              }),
+          icon: Icon(Icons.home_outlined),
           label: "home",
         ),
         BottomNavigationBarItem(
-          icon: IconButton(
-              icon: const Icon(Icons.shopping_bag_outlined),
-              onPressed: () {
-                Navigator.pushNamed(context, "/shop");
-              }),
+          icon: Icon(Icons.shopping_bag_outlined),
           label: "shop",
         )
       ],
@@ -47,9 +39,9 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: _appBar(),
       body: const Center(
-        child: Text("HOME"),
+        child: Text("SHOP"),
       ),
-      bottomNavigationBar: _bottomNavBar(context),
+      bottomNavigationBar: _bottomNavBar(),
     );
   }
 }

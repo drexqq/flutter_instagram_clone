@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone/src/views/home.dart';
+import 'package:insta_clone/src/themes/theme.dart' as theme;
+import 'package:insta_clone/src/views/shop.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Instagram Clone',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Home(),
+      initialRoute: '/',
+      routes: {
+        "/": (context) => const Home(),
+        "/shop": (context) => const Shop(),
+      },
+      theme: theme.appTheme,
     );
   }
 }
